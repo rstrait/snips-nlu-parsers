@@ -519,6 +519,64 @@ pub fn ko_examples<T: IntoBuiltinEntityKind>(entity_kind: &T) -> &'static [&'sta
     }
 }
 
+pub fn ru_examples<T: IntoBuiltinEntityKind>(entity_kind: &T) -> &'static [&'static str] {
+    match entity_kind.into_builtin_kind() {
+        BuiltinEntityKind::AmountOfMoney => &["$10", "шесть евро", "около 200 рублей"],
+        BuiltinEntityKind::Duration => &[
+            "1ч",
+            "2 часа 5 минут",
+            "на 5 часов",
+            "3 месяца",
+            "полчаса",
+            "8 часов и два дня",
+        ],
+        BuiltinEntityKind::Number => &["2001", "двадцать один", "three hundred and four"],
+        BuiltinEntityKind::Ordinal => &["1st", "the second", "триста четыре"],
+        BuiltinEntityKind::Temperature => &[],
+        BuiltinEntityKind::Datetime => &[
+            "завтра в 9 утра",
+            "сегодня",
+            "первого октября в 10 часов",
+            "в 8 часов",
+            "4:30 дня",
+            "через один час",
+        ],
+        BuiltinEntityKind::Date => &[
+            "сегодня",
+            "во вторник",
+            "26 марта",
+            "субота 19 января",
+            "понедельник 15 апредя 2019",
+            "послезавтра",
+        ],
+        BuiltinEntityKind::Time => &[
+            "сейчас",
+            "в полночь",
+            "в 8 утра",
+            "4:30 дня",
+            "через один час",
+            "в 10 часов",
+        ],
+        BuiltinEntityKind::DatePeriod => &[
+            "января",
+            "2019",
+            "с понедельника по пятницу",
+            "с 27 по 30 число",
+            "эта неделя",
+        ],
+        BuiltinEntityKind::TimePeriod => &["с 4 до 5 часов", "с пяти до восьми", "к концу дня"],
+        BuiltinEntityKind::Percentage => {
+            &["25%", "дватцать процентов"]
+        }
+        BuiltinEntityKind::MusicAlbum => &[],
+        BuiltinEntityKind::MusicArtist => &[],
+        BuiltinEntityKind::MusicTrack => &[],
+        BuiltinEntityKind::City => &[],
+        BuiltinEntityKind::Country => &[],
+        BuiltinEntityKind::Region => &[],
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

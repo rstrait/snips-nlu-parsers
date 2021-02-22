@@ -35,6 +35,7 @@ where
             Language::PT_PT => pt_pt_examples(self),
             Language::PT_BR => pt_br_examples(self),
             Language::KO => ko_examples(self),
+            Language::RU => ru_examples(self),
         }
     }
 

@@ -239,6 +239,7 @@ impl OntologyFrom<Language> for RustlingLanguage {
             Language::KO => RustlingLanguage::KO,
             Language::PT_PT => RustlingLanguage::PT,
             Language::PT_BR => RustlingLanguage::PT,
+            Language::RU => RustlingLanguage::RU,
         }
     }
 }
